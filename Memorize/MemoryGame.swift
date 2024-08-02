@@ -10,13 +10,21 @@ import Foundation
 struct MemoryGame<CardContent>{
     private(set) var cards: Array<Card>
     
-    func choose(card: Card){
+    init(numberOfPairOfCards: Int) {
+        cards = []
+        for _ in 0..<numberOfPairOfCards {
+            cards.append(Card(content: <#T##CardContent#>))
+                cards.append(Card(content: <#T##CardContent#>))
+        }
+    }
+    
+     func choose(_ card: Card){
         
     }
     
     struct Card {
-        var isFaceUp: Bool
-        var isMatched: Bool
-        var content: CardContent
+        var isFaceUp = false
+        var isMatched = false
+        let content: CardContent
     }
 }
